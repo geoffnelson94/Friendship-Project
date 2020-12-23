@@ -1,5 +1,0 @@
-- [ ] Add last names to old english function and concatenate frist/last name to return
-- [ ] Make unisex a Gender type for nondetermined characters
-- [ ] Build an elvish name generator
-- [ x ] Dev trait generator and write a some race-generic traits to file. Then add to main name + trait
-- [ ] Brainstorm how to make a trait generator that takes basic components actually generates a unqiue trait i.e. noun + adjective + ? algorithm

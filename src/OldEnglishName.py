@@ -1,12 +1,12 @@
 import random
-from ReadNames import ReadNames
+from ReadListFromFile import ReadListFromFile
 
 def OldEnglishName(gender):
     # Check the gender so you don't have to read all the name files
     if gender == 'male':
-        names = ReadNames('male_old_english')
+        names = ReadListFromFile('male_old_english','names')
     elif gender == 'female':
-        names = ReadNames('female_old_english')
+        names = ReadListFromFile('female_old_english','names')
     else:
         print("Bro, that is not a gender. option: male/female")
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 from OldEnglishName import OldEnglishName
+from TraitGen import TraitGen
 
-print("Hello everyone! \n" + \
-                 "Old english male first name sample: " + \
-                 OldEnglishName('male'))
+print("There is a man named: " + \
+                 OldEnglishName('male') + \
+                 "\nwho" + " " + TraitGen())
 
-print("Old english female first name sample: " + \
-                 OldEnglishName('female'))
-
-wait = input("Press Enter to continue.")
+print("A female elf named: " + \
+                 OldEnglishName('female') + \
+                 "\nwho" + " " + TraitGen(race='elvish'))

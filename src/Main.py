@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from OldEnglishName import OldEnglishName
 
-print("Hello! \n" + \
+print("Hello everyone! \n" + \
                  "Old english male first name sample: " + \
                  OldEnglishName('male'))
 

@@ -1,3 +1,5 @@
 - [ ] Add last names to old english function and concatenate frist/last name to return
 - [ ] Make unisex a Gender type for nondetermined characters
 - [ ] Build an elvish name generator
+- [ ] Build a simple trait generator and add some traits to a file for humans
+- [ ] Add a trait file for elfs

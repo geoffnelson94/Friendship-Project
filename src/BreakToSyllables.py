@@ -1,4 +1,4 @@
-class WordToSyllable:
+class BreakToSyllables:
     # List of single sound exceptions for double consonants
     single_sound_pairs = ['th', 'sh', 'ph', 'ch', 'wh','ck']
     # English vowels
@@ -63,6 +63,7 @@ class WordToSyllable:
                             self.last_break = i
 
         self.BreakHandler(i)
+        return self.syllables
 
     def CleanUp(self):
         self.syllables.clear()
@@ -85,8 +86,26 @@ class WordToSyllable:
             # If a break rule was hit, add the characters to the left as a syllable
             self.syllables.append(self.word[self.last_break:char_idx])
 
-# test_tool = WordToSyllable()
-# from OldEnglishName import OldEnglishName
-# for i in range(1,10):
-#     test_tool.ProcessWord(OldEnglishName('female'))
-#     print(test_tool.syllables)
+    # This function returns the first/middle/last syllables for all words
+    # in the list.
+    # Output format: [first_syllables, middle_syllables, last_syllables]
+    def ListToSyllables(self,input_list):
+        # Break each word in the list to syllables
+        first_syllable=[]
+        middle_syllables=[]
+        last_syllable=[]
+        for i in input_list:
+            syllables = self.ProcessWord(i)
+            # Seperate into first/middle/end syllables
+            first_syllable.append(syllables[0])
+            if len(syllables) > 2:
+                for i in syllables[1:-1]:
+                    middle_syllables.append(i)
+            if len(syllables) > 1:
+                last_syllable.append(syllables[-1])
+
+        return [first_syllable, middle_syllables, last_syllable]
+
+#test = BreakToSyllables()
+#my_list = ['geoffrey','corinn','susan','birthday','honeysuckle']
+#print(test.ListToSyllables(my_list))

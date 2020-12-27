@@ -1,5 +1,5 @@
 import random
-from ReadListFromFile import ReadListFromFile
+from FileIO import ReadListFromFile
 
 def TraitGen(**kwargs):
     if 'race' in kwargs and kwargs['race'] == 'elvish':

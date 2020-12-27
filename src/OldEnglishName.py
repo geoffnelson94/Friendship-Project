@@ -1,5 +1,5 @@
 import random
-from ReadListFromFile import ReadListFromFile
+from FileIO import ReadListFromFile
 
 def OldEnglishName(gender):
     # Check the gender so you don't have to read all the name files

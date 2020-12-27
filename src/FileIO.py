@@ -14,7 +14,8 @@ def PathContructor(filename=None,catagory=None):
             path = path / "traits/"
         elif catagory == 'jobs' or catagory == 'job':
             path = path / "jobs/"
-
+        elif catagory == 'saves' or catagory == 'save':
+            path = path / "Saved-NPC/"
     # Add filename if provided
     if filename != None:
         path = path / str(filename)

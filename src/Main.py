@@ -1,18 +1,12 @@
 #!/usr/bin/env python3
-from OldEnglishName import OldEnglishName
-from ProceduralNameGen import ProceduralNameGen
-from TraitGen import TraitGen
-from JobGen import JobGen
+from NPCProfile import NPC
 
-print("There is a man named: " + \
-                 OldEnglishName('male') + \
-                 "\nwho" + " " + TraitGen() + '\n'
-                 "and works as a " + JobGen() + '\n' )
+# Generate a random NPC with no specified options
+npc = NPC()
+npc.PrintInfo()
+npc.SaveToFile('my_npc')
 
-print("A female elf named: " + \
-                 OldEnglishName('female') + \
-                 "\nwho " + TraitGen(race='elvish') + '\n'
-                 "and works as a " + JobGen() + '\n' )
-
-print("A random name generated procedurally: " + \
-                 ProceduralNameGen('male_old_english'))
+# Generate a random NPC with a couple options
+specific_npc = NPC(gender='female', race='elf', procedural='yes')
+specific_npc.PrintInfo()
+specific_npc.SaveToFile('my_specific_npc')

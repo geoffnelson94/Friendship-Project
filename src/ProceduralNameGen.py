@@ -2,10 +2,7 @@ from BreakToSyllables import BreakToSyllables
 from FileIO import ReadListFromFile
 import random
 
-def ProceduralNameGen(name_list):
-    # Grab a list of names
-    names = ReadListFromFile(name_list,'names')
-
+def ProceduralNameGen(names):
     # Break list into syllable components
     syllable_tool = BreakToSyllables()
     components = syllable_tool.ListToSyllables(names)

@@ -5,12 +5,12 @@ from TraitGen import TraitGen
 from JobGen import JobGen
 
 print("There is a man named: " + \
-                 OldEnglishName('male') + \
+                 OldEnglishName(gender='male') + \
                  "\nwho" + " " + TraitGen() + '\n'
                  "and works as a " + JobGen() + '\n' )
 
 print("A female elf named: " + \
-                 OldEnglishName('female') + \
+                 OldEnglishName(gender='female') + \
                  "\nwho " + TraitGen(race='elvish') + '\n'
                  "and works as a " + JobGen() + '\n' )
 

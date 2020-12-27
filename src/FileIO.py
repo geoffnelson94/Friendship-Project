@@ -9,16 +9,15 @@ def PathContructor(filename=None,catagory=None):
     # If catagory, step path into that catagory
     if catagory != None:
         if catagory == 'names' or catagory == 'name':
-            path = Path(__file__).parent / "../names/"
+            path = path / "names/"
         elif catagory == 'trait' or catagory == 'traits':
-            path = Path(__file__).parent / "../traits/"
+            path = path / "traits/"
         elif catagory == 'jobs' or catagory == 'job':
-            path = Path(__file__).parent / "../jobs/"
+            path = path / "jobs/"
 
     # Add filename if provided
     if filename != None:
         path = path / str(filename)
-
     return path
 
 # Handles reading list from file
@@ -32,13 +31,12 @@ def ReadListFromFile(filename,catagory):
     return file_list
 
 def ReadAllFromDirectory(catagory):
-    path = PathContructor()
+    path = PathContructor(catagory)
     all_elem = []
     for name in os.listdir(path):
-        if os.path.isfile(name):
-            with open(os.path.join(DIR, name),'r') as filehandle:
-                all_elem.append(filehandle.read().splitlines())
-
+        if os.path.isfile(os.path.join(path, name)):
+            with open(os.path.join(path, name),'r') as filehandle:
+                all_elem += filehandle.read().splitlines()
     return all_elem
 
 # Handles writing contents of a list to file

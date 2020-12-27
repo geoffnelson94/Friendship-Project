@@ -1,5 +1,5 @@
 from BreakToSyllables import BreakToSyllables
-from ReadListFromFile import ReadListFromFile
+from FileIO import ReadListFromFile
 import random
 
 def ProceduralNameGen(name_list):

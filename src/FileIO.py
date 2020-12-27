@@ -4,9 +4,13 @@ from pathlib import Path
 def PathFromCatagory(filename,catagory):
     if catagory == 'names' or catagory == 'name':
         path = Path(__file__).parent / "../names/"
-    if catagory == 'trait' or catagory == 'traits':
+    elif catagory == 'trait' or catagory == 'traits':
         path = Path(__file__).parent / "../traits/"
-
+    elif catagory == 'jobs' or catagory == 'job':
+        path = Path(__file__).parent / "../jobs/"
+    else:
+        print('WARNING! No defined extra pathing given for catagory!')
+        path = Path(__file__).parent / ".."
     path = path / str(filename)
     return path
 

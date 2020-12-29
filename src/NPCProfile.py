@@ -3,6 +3,7 @@ from NameGen import NameGen
 from ProceduralNameGen import ProceduralNameGen
 from TraitGen import TraitGen
 from JobGen import JobGen
+from AbilityGen import AbilityGen
 
 # Import needed file I/O
 from FileIO import PathContructor
@@ -12,20 +13,25 @@ class NPC:
     name = None
     quirk = None
     job = None
+    abilities = None
 
     def __init__(self, **kwargs):
         # Generate name
         self.name = NameGen(**kwargs)
         # Generate trait
         self.quirk = TraitGen(**kwargs)
-        # Generate Job
+        # Generate job
         self.job = JobGen(**kwargs)
+        # Generate abilities
+        self.abilities = AbilityGen(**kwargs)
 
     def PrintInfo(self):
         print('NPC class details: \n' + \
               'name: ' + self.name + '\n' + \
               'quirk: ' + self.quirk + '\n' + \
-              'job: ' + self.job + '\n')
+              'job: ' + self.job)
+        print(self.abilities)
+        print('\n')
 
     def SaveToFile(self,filename):
         # Contruct path for saving file
